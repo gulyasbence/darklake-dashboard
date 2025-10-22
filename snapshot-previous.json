@@ -1,0 +1,57 @@
+{
+  "timestamp": "2025-10-22T22:38:27.145Z",
+  "overview": {
+    "totalTVL": 4667.834817000001,
+    "poolCount": 8,
+    "activePoolCount": 5,
+    "totalLPs": 24,
+    "averageDeposit": 194.49311737500003,
+    "tvlChange24h": 232.81065549984197,
+    "volumeChange24h": -56.52173913043478
+  },
+  "protocol": {
+    "swapCount24h": 10,
+    "fees24h": 16.64674134
+  },
+  "pools": [
+    {
+      "poolAddress": "2FwaRpni7rhHMQpfihTjpZ5SadwpnTNZzEBSzMPgVSTd",
+      "tvl": 3329.348268,
+      "swapCount24h": 10
+    },
+    {
+      "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
+      "tvl": 2.96509,
+      "swapCount24h": 0
+    },
+    {
+      "poolAddress": "4QFDY2LCRF5Kqyfp78V86TjLfYK4kcmn4A3XbEH1TfRn",
+      "tvl": 1325.511453,
+      "swapCount24h": 0
+    },
+    {
+      "poolAddress": "8uoNm92uoZcqC5138ugGnZNNU9aF1obuqRysydZvJHQF",
+      "tvl": 0,
+      "swapCount24h": 0
+    },
+    {
+      "poolAddress": "CQXhohWycedgL5TAfKt2trzJtcZv7rDynSW9DQqVJD7C",
+      "tvl": 0
+    },
+    {
+      "poolAddress": "FJr3uKM3cSBJCWrGFvF5Yrx1HxDEHAoNAfqm2gaqP8of",
+      "tvl": 0.01,
+      "swapCount24h": 0
+    },
+    {
+      "poolAddress": "Fijh9ou5hdQAKwRRnvXiCiWP4yzo42zwd1LCHSLhD37W",
+      "tvl": 10.000005999999999,
+      "swapCount24h": 0
+    },
+    {
+      "poolAddress": "HdYKm1tnrYaSQhfyj4C3Sjs8YVS4zQvjymU42611TWc3",
+      "tvl": 0,
+      "swapCount24h": 0
+    }
+  ]
+}

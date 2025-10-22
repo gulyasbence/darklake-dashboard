@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Darklake Dashboard</title>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 18px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        h2 {
+            font-size: 14px;
+            font-weight: normal;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: #888888;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 13px;
+            font-weight: normal;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        h4 {
+            font-size: 13px;
+            font-weight: normal;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #888888;
+        }
+
+        button {
+            background: #2a2a2a;
+            color: #e0e0e0;
+            border: 1px solid #444;
+            padding: 6px 12px;
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            font-size: 12px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background: #333;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        ul {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        li {
+            margin: 3px 0;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: "·";
+            margin-right: 8px;
+            color: #666;
+        }
+
+        code {
+            color: #888;
+            font-size: 12px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 20px 0;
+        }
+
+        em {
+            color: #888;
+            font-style: normal;
+        }
+
+        #refresh-status {
+            color: #888;
+        }
+
+        #last-updated {
+            color: #666;
+            margin: 10px 0 20px 0;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>darklake dashboard</h1>
+
+    <div class="controls">
+        <button id="refresh-btn" onclick="window.location.reload()">reload page</button>
+        <span id="refresh-status" style="color: #666;">data auto-refreshes every 8 hours</span>
+    </div>
+    <div id="last-updated"></div>
+
+    <h2>protocol overview</h2>
+    <div id="protocol-stats"></div>
+
+    <h2>fee revenue</h2>
+    <div id="fee-stats"></div>
+
+    <h2>pools</h2>
+    <div id="pools"></div>
+
+    <script>
+        async function loadData() {
+            try {
+                // Load all data files
+                const [dashboardData, feesData, lpData] = await Promise.all([
+                    fetch('final-dashboard-data.json').then(r => r.json()),
+                    fetch('fees-data.json').then(r => r.json()),
+                    fetch('lp-summary.json').then(r => r.json())
+                ]);
+
+                // Display last updated time
+                const lastUpdated = document.getElementById('last-updated');
+                const fetchTime = new Date(dashboardData.metadata.fetchedAt);
+                lastUpdated.textContent = `last updated: ${fetchTime.toLocaleString()}`;
+
+                // Display protocol stats
+                const protocolStats = document.getElementById('protocol-stats');
+                const tvlChange = dashboardData.overview.tvlChange24h;
+                const volChange = dashboardData.overview.volumeChange24h;
+
+                protocolStats.innerHTML = `
+                    <ul>
+                        <li>tvl: $${dashboardData.overview.totalTVL.toLocaleString()}${tvlChange !== null ? ` <em>${tvlChange > 0 ? '+' : ''}${tvlChange.toFixed(2)}% (24h)</em>` : ''}</li>
+                        <li>pools: ${lpData.overall.activePools} active / ${dashboardData.overview.poolCount} total</li>
+                        <li>lps: ${lpData.overall.totalLPs} total</li>
+                        <li>avg deposit: $${lpData.overall.averageDeposit.toFixed(2)}</li>
+                    </ul>
+                `;
+
+                // Display fee stats
+                const feeStats = document.getElementById('fee-stats');
+                feeStats.innerHTML = `
+                    <ul>
+                        <li>24h: $${feesData.protocol.fees24h.toFixed(2)} (${feesData.protocol.swapCount24h} swaps)</li>
+                        <li>7d: $${feesData.protocol.fees7d.toFixed(2)} (${feesData.protocol.swapCount7d} swaps)</li>
+                        <li>all-time: $${feesData.protocol.feesAllTime.toFixed(2)} (${feesData.protocol.swapCountAllTime} swaps)</li>
+                    </ul>
+                    <p><em>fees estimated at 0.5% rate | apr based on 24h fees annualized</em></p>
+                `;
+
+                // Display pools
+                const poolsDiv = document.getElementById('pools');
+                let poolsHTML = '';
+
+                dashboardData.pools.forEach((pool, index) => {
+                    const poolFee = feesData.pools.find(p => p.poolAddress === pool.poolAddress);
+                    const poolLP = lpData.pools.find(p => p.poolAddress === pool.poolAddress);
+
+                    const tvlChangeStr = pool.tvlChange24h !== null && pool.tvlChange24h !== undefined
+                        ? ` <em>${pool.tvlChange24h > 0 ? '+' : ''}${pool.tvlChange24h.toFixed(2)}% (24h)</em>`
+                        : '';
+
+                    poolsHTML += `
+                        <h3>${pool.poolName.toLowerCase()}</h3>
+                        <ul>
+                            <li>address: <code>${pool.poolAddress}</code></li>
+                            <li>tvl: $${pool.tvl.toLocaleString()}${tvlChangeStr}</li>
+                            <li>apr: ${pool.apr > 0 ? `${pool.apr.toFixed(2)}%` : '0.00%'} <em>(24h fees annualized)</em></li>
+                            <li>lps: ${poolLP ? poolLP.lpCount : 0} (avg: $${poolLP ? poolLP.averageDeposit.toFixed(2) : '0.00'})</li>
+                            <li>24h fees: $${poolFee ? poolFee.fees24h.toFixed(2) : '0.00'} (${poolFee ? poolFee.swapCount24h : 0} swaps)</li>
+                        </ul>
+                    `;
+
+                    // Show pool prices if available
+                    if (pool.poolPrices && Object.keys(pool.poolPrices).length > 0) {
+                        poolsHTML += `<h4>pool prices</h4><ul>`;
+                        for (const [pair, price] of Object.entries(pool.poolPrices)) {
+                            const [from, to] = pair.split('/');
+                            poolsHTML += `<li>1 ${from.toLowerCase()} = ${Number(price).toFixed(6)} ${to.toLowerCase()}</li>`;
+                        }
+                        poolsHTML += `</ul>`;
+                    }
+
+                    poolsHTML += `<h4>tokens</h4><ul>`;
+
+                    pool.tokens.forEach(token => {
+                        poolsHTML += `
+                            <li>
+                                ${token.amount.toFixed(3)} ${token.symbol.toLowerCase()}
+                                <ul>
+                                    <li>account: <code>${token.tokenAccount}</code></li>
+                                    <li>mint: <code>${token.mint}</code></li>
+                                </ul>
+                            </li>
+                        `;
+                    });
+
+                    poolsHTML += `
+                        </ul>
+                        <hr>
+                    `;
+                });
+
+                poolsDiv.innerHTML = poolsHTML;
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.body.innerHTML += `<p>Error loading data: ${error.message}</p>`;
+            }
+        }
+
+        loadData();
+    </script>
+</body>
+</html>

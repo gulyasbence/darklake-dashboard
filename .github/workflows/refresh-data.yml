@@ -1,0 +1,40 @@
+name: Refresh Dashboard Data
+
+on:
+  schedule:
+    # Runs every 8 hours (at 00:00, 08:00, and 16:00 UTC)
+    - cron: '0 */8 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Refresh data
+        env:
+          RPC_ENDPOINT: ${{ secrets.RPC_ENDPOINT }}
+        run: pnpm run refresh
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add final-dashboard-data.json fees-data.json lp-summary.json snapshot-previous.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-refresh data [skip ci]" && git push)

@@ -1,0 +1,388 @@
+{
+  "metadata": {
+    "fetchedAt": "2025-10-22T22:38:27.141Z",
+    "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1",
+    "dataVersion": "1.0.0"
+  },
+  "overview": {
+    "totalTVL": 4667.834817000001,
+    "poolCount": 8,
+    "activePoolCount": 5,
+    "totalLPs": 24,
+    "averageDeposit": 194.49311737500003,
+    "tvlChange24h": 232.81065549984197,
+    "volumeChange24h": -56.52173913043478
+  },
+  "tokens": {
+    "So11111111111111111111111111111111111111112": {
+      "symbol": "SOL",
+      "name": "Wrapped SOL",
+      "decimals": 9,
+      "price": 150
+    },
+    "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v": {
+      "symbol": "USDC",
+      "name": "USD Coin",
+      "decimals": 6,
+      "price": 1
+    },
+    "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB": {
+      "symbol": "USDT",
+      "name": "Tether USD",
+      "decimals": 6,
+      "price": 1
+    },
+    "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump": {
+      "symbol": "Fartcoin",
+      "name": "Fartcoin",
+      "decimals": 6,
+      "price": 0
+    },
+    "71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg": {
+      "symbol": "GOR",
+      "name": "Gorbagana",
+      "decimals": 6,
+      "price": 0
+    },
+    "HXsKnhXPtGr2mq4uTpxbxyy7ZydYWJwx4zMuYPEDukY": {
+      "symbol": "DUKY",
+      "name": "DukY",
+      "decimals": 9,
+      "price": 0
+    }
+  },
+  "pools": [
+    {
+      "poolAddress": "2FwaRpni7rhHMQpfihTjpZ5SadwpnTNZzEBSzMPgVSTd",
+      "poolName": "SOL/USDC",
+      "tvl": 3329.348268,
+      "tokens": [
+        {
+          "tokenAccount": "4EmzN3TcakMLQQttkD7dduNSXrayMuZ19FBS54nvpniP",
+          "mint": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "name": "Wrapped SOL",
+          "decimals": 9,
+          "amount": 18.676641713,
+          "rawAmount": "7566325",
+          "price": 150,
+          "value": 1.13494875,
+          "owner": "EEyriyMqraVrZy5Gm4RYsbxBwfLwQXG15ZJSczdVn3fD"
+        },
+        {
+          "tokenAccount": "EJb1XPhittpN6EoqeiEQYys9sdzk3dDMdzWuLf2CEjkJ",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "symbol": "USDC",
+          "name": "USD Coin",
+          "decimals": 6,
+          "amount": 3329.348268,
+          "rawAmount": "1622880",
+          "price": 1,
+          "value": 1.62288,
+          "owner": "EEyriyMqraVrZy5Gm4RYsbxBwfLwQXG15ZJSczdVn3fD"
+        }
+      ],
+      "dataLength": 289,
+      "lpCount": 8,
+      "lpSupply": "7479034762",
+      "averageDeposit": 416.1685335,
+      "fees24h": 16.64674134,
+      "fees7d": 78.239684298,
+      "feesAllTime": 139.832627256,
+      "swapCount24h": 10,
+      "swapCount7d": 47,
+      "swapCountAllTime": 84,
+      "apr": 182.49999999999997,
+      "poolPrices": {
+        "SOL/USDC": 178.262683364675,
+        "USDC/SOL": 0.0056096990190273475
+      },
+      "tvlChange24h": 96092.16160672935,
+      "volumeChange24h": -28.57142857142857
+    },
+    {
+      "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
+      "poolName": "SOL/USDT",
+      "tvl": 2.96509,
+      "tokens": [
+        {
+          "tokenAccount": "3HbbvQpg8gUxF28YhmEfWja6q2hoxEYRiYw6W28QyQ58",
+          "mint": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "name": "Wrapped SOL",
+          "decimals": 9,
+          "amount": 0.01474359,
+          "rawAmount": "14743590",
+          "price": 150,
+          "value": 2.2115385,
+          "owner": "EEyriyMqraVrZy5Gm4RYsbxBwfLwQXG15ZJSczdVn3fD"
+        },
+        {
+          "tokenAccount": "ECzH24BbspWY1yX6Xn8YmEyGqr23bSgAVbqmxxKDdrhC",
+          "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+          "symbol": "USDT",
+          "name": "Tether USD",
+          "decimals": 6,
+          "amount": 2.96509,
+          "rawAmount": "2965090",
+          "price": 1,
+          "value": 2.96509,
+          "owner": "EEyriyMqraVrZy5Gm4RYsbxBwfLwQXG15ZJSczdVn3fD"
+        }
+      ],
+      "dataLength": 289,
+      "lpCount": 1,
+      "lpSupply": "6484492",
+      "averageDeposit": 2.96509,
+      "fees24h": 0,
+      "fees7d": 0,
+      "feesAllTime": 0.04151126000000001,
+      "swapCount24h": 0,
+      "swapCount7d": 0,
+      "swapCountAllTime": 28,
+      "apr": 0,
+      "poolPrices": {
+        "SOL/USDT": 201.11044867634,
+        "USDT/SOL": 0.004972392069043436
+      },
+      "tvlChange24h": 0,
+      "volumeChange24h": -100
+    },
+    {
+      "poolAddress": "4QFDY2LCRF5Kqyfp78V86TjLfYK4kcmn4A3XbEH1TfRn",
+      "poolName": "Fartcoin/USDC",
+      "tvl": 1325.511453,
+      "tokens": [
+        {
+          "tokenAccount": "4LaFRZtCwuWHNgjE7EqWB4CMdBjfrCkgT38Msg6PdLGw",
+          "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+          "symbol": "Fartcoin",
+          "name": "Fartcoin",
+          "decimals": 6,
+          "amount": 3472.617588,
+          "rawAmount": "3320027825",
+          "price": 0,
+          "value": 0,
+          "owner": "EEyriyMqraVrZy5Gm4RYsbxBwfLwQXG15ZJSczdVn3fD"
+        },
+        {
+          "tokenAccount": "7tvUHcubKcNUk6rMUwYS9iopaiQgowvjAXj2bttLvZLE",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "symbol": "USDC",
+          "name": "USD Coin",
+          "decimals": 6,
+          "amount": 1325.511453,
+          "rawAmount": "1386113451",
+          "price": 1,
+          "value": 1386.113451,
+          "owner": "EEyriyMqraVrZy5Gm4RYsbxBwfLwQXG15ZJSczdVn3fD"
+        }
+      ],
+      "dataLength": 289,
+      "lpCount": 11,
+      "lpSupply": "2130207248",
+      "averageDeposit": 120.5010411818182,
+      "fees24h": 0,
+      "fees7d": 1.325511453,
+      "feesAllTime": 662.7557265,
+      "swapCount24h": 0,
+      "swapCount7d": 2,
+      "swapCountAllTime": 1000,
+      "apr": 0,
+      "poolPrices": {
+        "Fartcoin/USDC": 0.3817038356254504,
+        "USDC/Fartcoin": 2.6198322014800426
+      },
+      "tvlChange24h": -4.372080651571418,
+      "volumeChange24h": -100
+    },
+    {
+      "poolAddress": "8uoNm92uoZcqC5138ugGnZNNU9aF1obuqRysydZvJHQF",
+      "poolName": "SOL/GOR",
+      "tvl": 0,
+      "tokens": [
+        {
+          "tokenAccount": "GraR2vcwgME7XdiV8eGejw3yKkAg9LuPmz1GjnuxfVBJ",
+          "mint": "So11111111111111111111111111111111111111112",
+          "symbol": "SOL",
+          "name": "Wrapped SOL",
+          "decimals": 9,
+          "amount": 0.09796,
+          "rawAmount": "97960000",
+          "price": 150,
+          "value": 14.694,
+          "owner": "EEyriyMqraVrZy5Gm4RYsbxBwfLwQXG15ZJSczdVn3fD"
+        },
+        {
+          "tokenAccount": "AEnSvJH1nT86TarMWBXpPc9ShhSt5c5JeuZo7oEW7urF",
+          "mint": "71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg",
+          "symbol": "GOR",
+          "name": "Gorbagana",
+          "decimals": 6,
+          "amount": 3264.16744,
+          "rawAmount": "3264167440",
+          "price": 0,
+          "value": 0,
+          "owner": "EEyriyMqraVrZy5Gm4RYsbxBwfLwQXG15ZJSczdVn3fD"
+        }
+      ],
+      "dataLength": 289,
+      "lpCount": 1,
+      "lpSupply": "565471245",
+      "averageDeposit": 0,
+      "fees24h": 0,
+      "fees7d": 0,
+      "feesAllTime": 0,
+      "swapCount24h": 0,
+      "swapCount7d": 0,
+      "swapCountAllTime": 1,
+      "apr": 0,
+      "poolPrices": {
+        "SOL/GOR": 33321.43160473663,
+        "GOR/SOL": 0.000030010715381683974
+      },
+      "tvlChange24h": null,
+      "volumeChange24h": null
+    },
+    {
+      "poolAddress": "CQXhohWycedgL5TAfKt2trzJtcZv7rDynSW9DQqVJD7C",
+      "poolName": "Empty Pool",
+      "tvl": 0,
+      "tokens": [],
+      "dataLength": 186
+    },
+    {
+      "poolAddress": "FJr3uKM3cSBJCWrGFvF5Yrx1HxDEHAoNAfqm2gaqP8of",
+      "poolName": "GOR/USDC",
+      "tvl": 0.01,
+      "tokens": [
+        {
+          "tokenAccount": "Hr19VBZ2wDwji6PK95CzJCSL8QFwxwRaYrSdZkBLeNi5",
+          "mint": "71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg",
+          "symbol": "GOR",
+          "name": "Gorbagana",
+          "decimals": 6,
+          "amount": 0.01,
+          "rawAmount": "10000",
+          "price": 0,
+          "value": 0,
+          "owner": "EEyriyMqraVrZy5Gm4RYsbxBwfLwQXG15ZJSczdVn3fD"
+        },
+        {
+          "tokenAccount": "BceKabEQ1cM1yCCXkbJxqWyKXvJ1yzHzk57pAUarfUDQ",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "symbol": "USDC",
+          "name": "USD Coin",
+          "decimals": 6,
+          "amount": 0.01,
+          "rawAmount": "10000",
+          "price": 1,
+          "value": 0.01,
+          "owner": "EEyriyMqraVrZy5Gm4RYsbxBwfLwQXG15ZJSczdVn3fD"
+        }
+      ],
+      "dataLength": 289,
+      "lpCount": 1,
+      "lpSupply": "9900",
+      "averageDeposit": 0.01,
+      "fees24h": 0,
+      "fees7d": 0,
+      "feesAllTime": 0.000005,
+      "swapCount24h": 0,
+      "swapCount7d": 0,
+      "swapCountAllTime": 1,
+      "apr": 0,
+      "poolPrices": {
+        "GOR/USDC": 1,
+        "USDC/GOR": 1
+      },
+      "tvlChange24h": 0,
+      "volumeChange24h": null
+    },
+    {
+      "poolAddress": "Fijh9ou5hdQAKwRRnvXiCiWP4yzo42zwd1LCHSLhD37W",
+      "poolName": "USDC/USDT",
+      "tvl": 10.000005999999999,
+      "tokens": [
+        {
+          "tokenAccount": "83DjqSWD754UQt45ZVjVuCgqwZToHBbA8SoLSaWXazuS",
+          "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "symbol": "USDC",
+          "name": "USD Coin",
+          "decimals": 6,
+          "amount": 4.999006,
+          "rawAmount": "4999006",
+          "price": 1,
+          "value": 4.999006,
+          "owner": "EEyriyMqraVrZy5Gm4RYsbxBwfLwQXG15ZJSczdVn3fD"
+        },
+        {
+          "tokenAccount": "2SMZFw3dYMq9NqVT4s2BxZwYcdwwx5fRJzLZU2T1oLK1",
+          "mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+          "symbol": "USDT",
+          "name": "Tether USD",
+          "decimals": 6,
+          "amount": 5.001,
+          "rawAmount": "5001000",
+          "price": 1,
+          "value": 5.001,
+          "owner": "EEyriyMqraVrZy5Gm4RYsbxBwfLwQXG15ZJSczdVn3fD"
+        }
+      ],
+      "dataLength": 289,
+      "lpCount": 1,
+      "lpSupply": "4999900",
+      "averageDeposit": 10.000005999999999,
+      "fees24h": 0,
+      "fees7d": 0,
+      "feesAllTime": 0.015000008999999998,
+      "swapCount24h": 0,
+      "swapCount7d": 0,
+      "swapCountAllTime": 3,
+      "apr": 0,
+      "poolPrices": {
+        "USDC/USDT": 1.0003988792972045,
+        "USDT/USDC": 0.999601279744051
+      },
+      "tvlChange24h": 0,
+      "volumeChange24h": null
+    },
+    {
+      "poolAddress": "HdYKm1tnrYaSQhfyj4C3Sjs8YVS4zQvjymU42611TWc3",
+      "poolName": "DUKY",
+      "tvl": 0,
+      "tokens": [
+        {
+          "tokenAccount": "AgxVMhyedBuvJAFkXRRVLKpKMM8AAnw4FxmXR7PV5DL6",
+          "mint": "HXsKnhXPtGr2mq4uTpxbxyy7ZydYWJwx4zMuYPEDukY",
+          "symbol": "DUKY",
+          "name": "DukY",
+          "decimals": 9,
+          "amount": 199850.856366813,
+          "rawAmount": "199850856366813",
+          "price": 0,
+          "value": 0,
+          "owner": "EEyriyMqraVrZy5Gm4RYsbxBwfLwQXG15ZJSczdVn3fD"
+        }
+      ],
+      "dataLength": 289,
+      "lpCount": 1,
+      "lpSupply": "141421356237404",
+      "averageDeposit": 0,
+      "fees24h": 0,
+      "fees7d": 0,
+      "feesAllTime": 0,
+      "swapCount24h": 0,
+      "swapCount7d": 0,
+      "swapCountAllTime": 44,
+      "apr": 0,
+      "poolPrices": null,
+      "tvlChange24h": null,
+      "volumeChange24h": null
+    }
+  ],
+  "protocol": {
+    "swapCount24h": 10,
+    "fees24h": 16.64674134
+  }
+}

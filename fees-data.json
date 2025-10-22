@@ -1,0 +1,102 @@
+{
+  "fetchedAt": "2025-10-22T22:38:27.145Z",
+  "note": "Fees are estimated based on 0.5% Darklake fee rate",
+  "protocol": {
+    "fees24h": 16.64674134,
+    "fees7d": 79.565195751,
+    "feesAllTime": 802.644870025,
+    "swapCount24h": 10,
+    "swapCount7d": 49,
+    "swapCountAllTime": 1161
+  },
+  "pools": [
+    {
+      "poolAddress": "2FwaRpni7rhHMQpfihTjpZ5SadwpnTNZzEBSzMPgVSTd",
+      "poolName": "SOL/USDC",
+      "fees24h": 16.64674134,
+      "fees7d": 78.239684298,
+      "feesAllTime": 139.832627256,
+      "swapCount24h": 10,
+      "swapCount7d": 47,
+      "swapCountAllTime": 84,
+      "apr": 182.49999999999997
+    },
+    {
+      "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
+      "poolName": "SOL/USDT",
+      "fees24h": 0,
+      "fees7d": 0,
+      "feesAllTime": 0.04151126000000001,
+      "swapCount24h": 0,
+      "swapCount7d": 0,
+      "swapCountAllTime": 28,
+      "apr": 0
+    },
+    {
+      "poolAddress": "4QFDY2LCRF5Kqyfp78V86TjLfYK4kcmn4A3XbEH1TfRn",
+      "poolName": "Fartcoin/USDC",
+      "fees24h": 0,
+      "fees7d": 1.325511453,
+      "feesAllTime": 662.7557265,
+      "swapCount24h": 0,
+      "swapCount7d": 2,
+      "swapCountAllTime": 1000,
+      "apr": 0
+    },
+    {
+      "poolAddress": "8uoNm92uoZcqC5138ugGnZNNU9aF1obuqRysydZvJHQF",
+      "poolName": "SOL/GOR",
+      "fees24h": 0,
+      "fees7d": 0,
+      "feesAllTime": 0,
+      "swapCount24h": 0,
+      "swapCount7d": 0,
+      "swapCountAllTime": 1,
+      "apr": 0
+    },
+    {
+      "poolAddress": "CQXhohWycedgL5TAfKt2trzJtcZv7rDynSW9DQqVJD7C",
+      "poolName": "Empty Pool",
+      "fees24h": 0,
+      "fees7d": 0,
+      "feesAllTime": 0,
+      "swapCount24h": 0,
+      "swapCount7d": 0,
+      "swapCountAllTime": 0,
+      "apr": 0
+    },
+    {
+      "poolAddress": "FJr3uKM3cSBJCWrGFvF5Yrx1HxDEHAoNAfqm2gaqP8of",
+      "poolName": "GOR/USDC",
+      "fees24h": 0,
+      "fees7d": 0,
+      "feesAllTime": 0.000005,
+      "swapCount24h": 0,
+      "swapCount7d": 0,
+      "swapCountAllTime": 1,
+      "apr": 0
+    },
+    {
+      "poolAddress": "Fijh9ou5hdQAKwRRnvXiCiWP4yzo42zwd1LCHSLhD37W",
+      "poolName": "USDC/USDT",
+      "fees24h": 0,
+      "fees7d": 0,
+      "feesAllTime": 0.015000008999999998,
+      "swapCount24h": 0,
+      "swapCount7d": 0,
+      "swapCountAllTime": 3,
+      "apr": 0
+    },
+    {
+      "poolAddress": "HdYKm1tnrYaSQhfyj4C3Sjs8YVS4zQvjymU42611TWc3",
+      "poolName": "DUKY",
+      "fees24h": 0,
+      "fees7d": 0,
+      "feesAllTime": 0,
+      "swapCount24h": 0,
+      "swapCount7d": 0,
+      "swapCountAllTime": 44,
+      "apr": 0
+    }
+  ]
+}
