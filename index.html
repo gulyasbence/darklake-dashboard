@@ -124,8 +124,8 @@
     <h1>darklake dashboard</h1>
 
     <div class="controls">
-        <button id="refresh-btn" onclick="window.location.reload()">reload page</button>
-        <span id="refresh-status" style="color: #666;">data auto-refreshes every 8 hours</span>
+        <button id="refresh-btn" onclick="refreshData()">refresh data</button>
+        <span id="refresh-status" style="color: #666;">auto-refreshes every 8 hours</span>
     </div>
     <div id="last-updated"></div>
 
@@ -139,6 +139,74 @@
     <div id="pools"></div>
 
     <script>
+        let refreshCheckInterval = null;
+        let lastKnownDataTimestamp = null;
+
+        async function refreshData() {
+            const btn = document.getElementById('refresh-btn');
+            const status = document.getElementById('refresh-status');
+
+            btn.disabled = true;
+            status.textContent = 'Triggering data refresh...';
+            status.style.color = '#888';
+
+            try {
+                const response = await fetch('/api/trigger-refresh', {
+                    method: 'POST',
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    status.textContent = 'Refreshing data from blockchain... This takes about 2 minutes. Page will auto-reload when complete.';
+
+                    // Store current data timestamp
+                    const currentData = await fetch('final-dashboard-data.json').then(r => r.json());
+                    lastKnownDataTimestamp = currentData.metadata.fetchedAt;
+
+                    // Start checking for updates every 10 seconds
+                    let checkCount = 0;
+                    refreshCheckInterval = setInterval(async () => {
+                        checkCount++;
+                        status.textContent = `Refreshing data... (${checkCount * 10}s elapsed)`;
+
+                        try {
+                            const newData = await fetch('final-dashboard-data.json?' + Date.now()).then(r => r.json());
+
+                            // Check if data has been updated
+                            if (newData.metadata.fetchedAt !== lastKnownDataTimestamp) {
+                                clearInterval(refreshCheckInterval);
+                                status.textContent = 'Refresh complete! Reloading page...';
+                                status.style.color = '#4ade80';
+                                setTimeout(() => {
+                                    window.location.reload();
+                                }, 1000);
+                            }
+
+                            // Timeout after 5 minutes
+                            if (checkCount >= 30) {
+                                clearInterval(refreshCheckInterval);
+                                status.textContent = 'Refresh is taking longer than expected. Please reload page manually.';
+                                status.style.color = '#888';
+                                btn.disabled = false;
+                            }
+                        } catch (error) {
+                            // Data might be updating, continue checking
+                        }
+                    }, 10000);
+
+                } else {
+                    status.textContent = 'Error: ' + (result.error || 'Unknown error');
+                    status.style.color = '#ef4444';
+                    btn.disabled = false;
+                }
+            } catch (error) {
+                status.textContent = 'Error: ' + error.message;
+                status.style.color = '#ef4444';
+                btn.disabled = false;
+            }
+        }
+
         async function loadData() {
             try {
                 // Load all data files
