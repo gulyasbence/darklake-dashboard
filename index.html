@@ -144,9 +144,6 @@
     <h2>protocol overview</h2>
     <div id="protocol-stats"></div>
 
-    <h2>fee revenue</h2>
-    <div id="fee-stats"></div>
-
     <h2>pools</h2>
     <div id="pools"></div>
 
@@ -222,9 +219,8 @@
         async function loadData() {
             try {
                 // Load all data files
-                const [dashboardData, feesData, lpData] = await Promise.all([
+                const [dashboardData, lpData] = await Promise.all([
                     fetch('final-dashboard-data.json').then(r => r.json()),
-                    fetch('fees-data.json').then(r => r.json()),
                     fetch('lp-summary.json').then(r => r.json())
                 ]);
 
@@ -240,27 +236,15 @@
 
                 // Display protocol stats
                 const protocolStats = document.getElementById('protocol-stats');
-                const tvlChange = dashboardData.overview.tvlChange24h;
-                const volChange = dashboardData.overview.volumeChange24h;
 
                 protocolStats.innerHTML = `
                     <ul>
-                        <li>tvl: $${dashboardData.overview.totalTVL.toLocaleString()}${tvlChange !== null ? ` <em>${tvlChange > 0 ? '+' : ''}${tvlChange.toFixed(2)}% (24h)</em>` : ''}</li>
-                        <li>pools: ${lpData.overall.activePools} active / ${dashboardData.overview.poolCount} total</li>
+                        <li>tvl: $${dashboardData.overview.totalTVL.toLocaleString()}</li>
+                        <li>pools: ${lpData.overall.activePools} with liquidity / ${dashboardData.overview.poolCount} total</li>
                         <li>lps: ${lpData.overall.totalLPs} total</li>
                         <li>avg deposit: $${lpData.overall.averageDeposit.toFixed(2)}</li>
                     </ul>
-                `;
-
-                // Display fee stats
-                const feeStats = document.getElementById('fee-stats');
-                feeStats.innerHTML = `
-                    <ul>
-                        <li>24h: $${feesData.protocol.fees24h.toFixed(2)} (${feesData.protocol.swapCount24h} swaps)</li>
-                        <li>7d: $${feesData.protocol.fees7d.toFixed(2)} (${feesData.protocol.swapCount7d} swaps)</li>
-                        <li>all-time: $${feesData.protocol.feesAllTime.toFixed(2)} (${feesData.protocol.swapCountAllTime} swaps)</li>
-                    </ul>
-                    <p><em>fees estimated at 0.5% rate | apr based on 24h fees annualized</em></p>
+                    <p><em>tvl calculated from pool balances × pool-derived prices</em></p>
                 `;
 
                 // Display pools
@@ -268,22 +252,15 @@
                 let poolsHTML = '';
 
                 dashboardData.pools.forEach((pool, index) => {
-                    const poolFee = feesData.pools.find(p => p.poolAddress === pool.poolAddress);
                     const poolLP = lpData.pools.find(p => p.poolAddress === pool.poolAddress);
-
-                    const tvlChangeStr = pool.tvlChange24h !== null && pool.tvlChange24h !== undefined
-                        ? ` <em>${pool.tvlChange24h > 0 ? '+' : ''}${pool.tvlChange24h.toFixed(2)}% (24h)</em>`
-                        : '';
 
                     poolsHTML += `
                         <h3>${pool.poolName.toLowerCase()}</h3>
                         <ul>
                             <li>pool address: <a href="https://orb.helius.dev/address/${pool.poolAddress}" target="_blank" rel="noopener"><code>${pool.poolAddress}</code></a></li>
                             ${poolLP && poolLP.lpMint ? `<li>lp token mint: <a href="https://orb.helius.dev/address/${poolLP.lpMint}" target="_blank" rel="noopener"><code>${poolLP.lpMint}</code></a></li>` : ''}
-                            <li>tvl: $${pool.tvl.toLocaleString()}${tvlChangeStr}</li>
-                            <li>apr: ${pool.apr > 0 ? `${pool.apr.toFixed(2)}%` : '0.00%'} <em>(24h fees annualized)</em></li>
+                            <li>tvl: $${pool.tvl.toLocaleString()}</li>
                             <li>lps: ${poolLP ? poolLP.lpCount : 0} (avg: $${poolLP ? poolLP.averageDeposit.toFixed(2) : '0.00'})</li>
-                            <li>24h fees: $${poolFee ? poolFee.fees24h.toFixed(2) : '0.00'} (${poolFee ? poolFee.swapCount24h : 0} swaps)</li>
                         </ul>
                     `;
 

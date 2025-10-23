@@ -68,16 +68,6 @@ async function refreshData() {
   const now = Date.now() / 1000;
   const day = 24 * 60 * 60;
 
-  // Load previous snapshot for % change calculations
-  let previousSnapshot: any = null;
-  try {
-    if (fs.existsSync('snapshot-previous.json')) {
-      previousSnapshot = JSON.parse(fs.readFileSync('snapshot-previous.json', 'utf-8'));
-    }
-  } catch (error) {
-    console.log('No previous snapshot found');
-  }
-
   // STEP 1: Fetch all current token balances first (without prices)
   const poolsWithBalances = [];
 
@@ -171,40 +161,6 @@ async function refreshData() {
       }
     }
 
-    // 3. Update swap counts (1 RPC call per pool)
-    let swapCount24h = 0;
-    let swapCount7d = 0;
-    let swapCountAllTime = 0;
-
-    try {
-      const signatures = await connection.getSignaturesForAddress(
-        new PublicKey(pool.poolAddress),
-        { limit: 1000 }
-      );
-      rpcCalls++;
-
-      swapCountAllTime = signatures.length;
-
-      for (const sig of signatures) {
-        const txTime = sig.blockTime || 0;
-        if (txTime >= now - day) swapCount24h++;
-        if (txTime >= now - (7 * day)) swapCount7d++;
-      }
-
-      console.log(`  Swaps: ${swapCount24h} (24h), ${swapCount7d} (7d), ${swapCountAllTime} (all-time)`);
-    } catch (error) {
-      console.log(`  Error fetching swaps: ${(error as Error).message}`);
-    }
-
-    // Calculate fees (0.5% Darklake fee)
-    const avgSwapSize = poolTVL / 10;
-    const feeRate = 0.005;
-    const fees24h = swapCount24h * avgSwapSize * feeRate;
-    const fees7d = swapCount7d * avgSwapSize * feeRate;
-    const feesAllTime = swapCountAllTime * avgSwapSize * feeRate;
-
-    console.log(`  Fees: $${fees24h.toFixed(2)} (24h), $${fees7d.toFixed(2)} (7d), $${feesAllTime.toFixed(2)} (all-time)`);
-
     // Calculate pool-based prices (from token ratios in the pool)
     let poolPrices: any = null;
     if (tokensWithValues.length === 2) {
@@ -220,25 +176,6 @@ async function refreshData() {
       }
     }
 
-    // Calculate APR (annualized from 24h fees)
-    const apr = poolTVL > 0 ? (fees24h / poolTVL) * 365 * 100 : 0;
-    console.log(`  APR: ${apr.toFixed(2)}%`);
-
-    // Calculate % changes from previous snapshot
-    let tvlChange24h = null;
-    let volumeChange24h = null;
-    if (previousSnapshot) {
-      const prevPool = previousSnapshot.pools?.find((p: any) => p.poolAddress === pool.poolAddress);
-      if (prevPool) {
-        tvlChange24h = prevPool.tvl > 0 ? ((poolTVL - prevPool.tvl) / prevPool.tvl) * 100 : null;
-        volumeChange24h = prevPool.swapCount24h > 0 ? ((swapCount24h - prevPool.swapCount24h) / prevPool.swapCount24h) * 100 : null;
-
-        if (tvlChange24h !== null) {
-          console.log(`  TVL change: ${tvlChange24h > 0 ? '+' : ''}${tvlChange24h.toFixed(2)}%`);
-        }
-      }
-    }
-
     console.log('');
 
     updatedPools.push({
@@ -248,50 +185,20 @@ async function refreshData() {
       lpCount,
       lpSupply,
       averageDeposit: lpCount > 0 ? poolTVL / lpCount : 0,
-      fees24h,
-      fees7d,
-      feesAllTime,
-      swapCount24h,
-      swapCount7d,
-      swapCountAllTime,
-      apr,
       poolPrices,
-      tvlChange24h,
-      volumeChange24h,
     });
   }
 
   // Calculate protocol totals
   const totalTVL = updatedPools.reduce((sum, p) => sum + p.tvl, 0);
   const totalLPs = updatedPools.reduce((sum, p) => sum + (p.lpCount || 0), 0);
-  const fees24h = updatedPools.reduce((sum, p) => sum + (p.fees24h || 0), 0);
-  const fees7d = updatedPools.reduce((sum, p) => sum + (p.fees7d || 0), 0);
-  const feesAllTime = updatedPools.reduce((sum, p) => sum + (p.feesAllTime || 0), 0);
-  const swapCount24h = updatedPools.reduce((sum, p) => sum + (p.swapCount24h || 0), 0);
-  const swapCount7d = updatedPools.reduce((sum, p) => sum + (p.swapCount7d || 0), 0);
-  const swapCountAllTime = updatedPools.reduce((sum, p) => sum + (p.swapCountAllTime || 0), 0);
-
-  // Calculate protocol-level % changes
-  let protocolTvlChange24h = null;
-  let protocolVolumeChange24h = null;
-  if (previousSnapshot) {
-    const prevTVL = previousSnapshot.overview?.totalTVL;
-    const prevSwaps = previousSnapshot.protocol?.swapCount24h;
-
-    if (prevTVL > 0) {
-      protocolTvlChange24h = ((totalTVL - prevTVL) / prevTVL) * 100;
-    }
-    if (prevSwaps > 0) {
-      protocolVolumeChange24h = ((swapCount24h - prevSwaps) / prevSwaps) * 100;
-    }
-  }
 
   // Update final-dashboard-data.json
   const dashboardData = {
-    ...existingData,
     metadata: {
-      ...existingData.metadata,
       fetchedAt: new Date().toISOString(),
+      programId: existingData.metadata.programId,
+      dataVersion: '1.0.0',
     },
     overview: {
       totalTVL,
@@ -299,59 +206,12 @@ async function refreshData() {
       activePoolCount: updatedPools.filter(p => p.tvl > 0).length,
       totalLPs,
       averageDeposit: totalLPs > 0 ? totalTVL / totalLPs : 0,
-      tvlChange24h: protocolTvlChange24h,
-      volumeChange24h: protocolVolumeChange24h,
     },
-    protocol: {
-      swapCount24h,
-      fees24h,
-    },
+    tokens: existingData.tokens,
     pools: updatedPools,
   };
 
   fs.writeFileSync('final-dashboard-data.json', JSON.stringify(dashboardData, null, 2));
-
-  // Save current snapshot for next comparison
-  if (fs.existsSync('snapshot-previous.json')) {
-    fs.unlinkSync('snapshot-previous.json');
-  }
-  fs.writeFileSync('snapshot-previous.json', JSON.stringify({
-    timestamp: new Date().toISOString(),
-    overview: dashboardData.overview,
-    protocol: dashboardData.protocol,
-    pools: updatedPools.map(p => ({
-      poolAddress: p.poolAddress,
-      tvl: p.tvl,
-      swapCount24h: p.swapCount24h,
-    })),
-  }, null, 2));
-
-  // Update fees-data.json
-  const feesData = {
-    fetchedAt: new Date().toISOString(),
-    note: 'Fees are estimated based on 0.5% Darklake fee rate',
-    protocol: {
-      fees24h,
-      fees7d,
-      feesAllTime,
-      swapCount24h,
-      swapCount7d,
-      swapCountAllTime,
-    },
-    pools: updatedPools.map(p => ({
-      poolAddress: p.poolAddress,
-      poolName: p.poolName,
-      fees24h: p.fees24h || 0,
-      fees7d: p.fees7d || 0,
-      feesAllTime: p.feesAllTime || 0,
-      swapCount24h: p.swapCount24h || 0,
-      swapCount7d: p.swapCount7d || 0,
-      swapCountAllTime: p.swapCountAllTime || 0,
-      apr: p.apr || 0,
-    })),
-  };
-
-  fs.writeFileSync('fees-data.json', JSON.stringify(feesData, null, 2));
 
   // Update lp-summary.json
   const lpSummary = {
@@ -384,12 +244,10 @@ async function refreshData() {
   fs.writeFileSync('lp-summary.json', JSON.stringify(lpSummary, null, 2));
 
   console.log('=== REFRESH COMPLETE ===\n');
-  console.log(`Total TVL: $${totalTVL.toLocaleString()}${protocolTvlChange24h !== null ? ` (${protocolTvlChange24h > 0 ? '+' : ''}${protocolTvlChange24h.toFixed(2)}%)` : ''}`);
+  console.log(`Total TVL: $${totalTVL.toLocaleString()}`);
   console.log(`Total LPs: ${totalLPs}`);
-  console.log(`24h Swaps: ${swapCount24h}${protocolVolumeChange24h !== null ? ` (${protocolVolumeChange24h > 0 ? '+' : ''}${protocolVolumeChange24h.toFixed(2)}%)` : ''}`);
-  console.log(`24h Fees: $${fees24h.toFixed(2)}`);
-  console.log(`7d Fees: $${fees7d.toFixed(2)}`);
-  console.log(`All-time Fees: $${feesAllTime.toFixed(2)}`);
+  console.log(`Pools: ${dashboardData.overview.activePoolCount} with liquidity / ${dashboardData.overview.poolCount} total`);
+  console.log(`Average Deposit: $${dashboardData.overview.averageDeposit.toFixed(2)}`);
   console.log(`\nTotal RPC calls used: ${rpcCalls}`);
   console.log(`\n✅ Data refreshed at ${new Date().toISOString()}`);
 }
