@@ -207,9 +207,9 @@ async function refreshData() {
 
     // Calculate pool-based prices (from token ratios in the pool)
     let poolPrices: any = null;
-    if (updatedTokens.length === 2) {
-      const token0 = updatedTokens[0];
-      const token1 = updatedTokens[1];
+    if (tokensWithValues.length === 2) {
+      const token0 = tokensWithValues[0];
+      const token1 = tokensWithValues[1];
 
       if (token0.amount > 0 && token1.amount > 0) {
         poolPrices = {
