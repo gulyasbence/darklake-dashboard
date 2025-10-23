@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-23T01:14:33.626Z",
+  "timestamp": "2025-10-23T08:17:56.655Z",
   "overview": {
     "totalTVL": 9360.248048338544,
     "poolCount": 8,
@@ -7,17 +7,17 @@
     "totalLPs": 24,
     "averageDeposit": 390.01033534743937,
     "tvlChange24h": 0,
-    "volumeChange24h": 0
+    "volumeChange24h": -83.33333333333334
   },
   "protocol": {
-    "swapCount24h": 6,
-    "fees24h": 19.976089608
+    "swapCount24h": 1,
+    "fees24h": 3.329348268
   },
   "pools": [
     {
       "poolAddress": "2FwaRpni7rhHMQpfihTjpZ5SadwpnTNZzEBSzMPgVSTd",
       "tvl": 6658.696536,
-      "swapCount24h": 6
+      "swapCount24h": 1
     },
     {
       "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
