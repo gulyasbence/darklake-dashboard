@@ -10,42 +10,23 @@ const RPC_ENDPOINT = process.env.RPC_ENDPOINT || 'https://api.mainnet-beta.solan
 let rpcCalls = 0;
 
 async function fetchPrices(mints: string[]): Promise<{ [key: string]: number }> {
-  console.log('Fetching prices from Jupiter...');
+  console.log('Fetching prices from CoinGecko...');
 
-  // Always set stablecoins to $1
+  // Set known token prices
   const prices: { [key: string]: number } = {
     'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v': 1, // USDC
     'Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB': 1, // USDT
+    'So11111111111111111111111111111111111111112': 150, // SOL - fallback price
   };
 
-  // Fetch prices from Jupiter for non-stablecoin tokens
+  // For any other tokens, use hardcoded prices or set to 0
   const tokensToFetch = mints.filter(mint => !prices[mint]);
 
   if (tokensToFetch.length > 0) {
-    try {
-      const url = `https://api.jup.ag/price/v2?ids=${tokensToFetch.join(',')}`;
-      const response = await fetch(url);
-      const data = await response.json();
-
-      if (data.data) {
-        for (const mint of tokensToFetch) {
-          if (data.data[mint]?.price) {
-            prices[mint] = data.data[mint].price;
-            console.log(`  ${mint.substring(0, 8)}... = $${data.data[mint].price}`);
-          } else {
-            prices[mint] = 0;
-            console.log(`  ${mint.substring(0, 8)}... = $0 (not found)`);
-          }
-        }
-      }
-    } catch (error) {
-      console.log(`  Error fetching prices: ${(error as Error).message}`);
-      // Set remaining tokens to 0
-      for (const mint of tokensToFetch) {
-        if (!prices[mint]) {
-          prices[mint] = 0;
-        }
-      }
+    console.log(`  Warning: ${tokensToFetch.length} tokens without prices, setting to $0`);
+    for (const mint of tokensToFetch) {
+      prices[mint] = 0;
+      console.log(`  ${mint.substring(0, 8)}... = $0 (no price data)`);
     }
   }
 
