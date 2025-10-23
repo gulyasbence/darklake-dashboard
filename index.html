@@ -216,10 +216,11 @@
                     fetch('lp-summary.json').then(r => r.json())
                 ]);
 
-                // Display last updated time
+                // Display last updated time in UTC
                 const lastUpdated = document.getElementById('last-updated');
                 const fetchTime = new Date(dashboardData.metadata.fetchedAt);
-                lastUpdated.textContent = `last updated: ${fetchTime.toLocaleString()}`;
+                const utcString = fetchTime.toISOString().replace('T', ' ').substring(0, 19);
+                lastUpdated.textContent = `last updated: ${utcString} UTC`;
 
                 // Display protocol stats
                 const protocolStats = document.getElementById('protocol-stats');
@@ -261,7 +262,8 @@
                     poolsHTML += `
                         <h3>${pool.poolName.toLowerCase()}</h3>
                         <ul>
-                            <li>address: <code>${pool.poolAddress}</code></li>
+                            <li>pool address: <code>${pool.poolAddress}</code></li>
+                            ${poolLP && poolLP.lpMint ? `<li>lp token mint: <code>${poolLP.lpMint}</code></li>` : ''}
                             <li>tvl: $${pool.tvl.toLocaleString()}${tvlChangeStr}</li>
                             <li>apr: ${pool.apr > 0 ? `${pool.apr.toFixed(2)}%` : '0.00%'} <em>(24h fees annualized)</em></li>
                             <li>lps: ${poolLP ? poolLP.lpCount : 0} (avg: $${poolLP ? poolLP.averageDeposit.toFixed(2) : '0.00'})</li>
