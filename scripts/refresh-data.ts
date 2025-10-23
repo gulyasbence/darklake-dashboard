@@ -9,24 +9,45 @@ const RPC_ENDPOINT = process.env.RPC_ENDPOINT || 'https://api.mainnet-beta.solan
 
 let rpcCalls = 0;
 
-async function fetchPrices(mints: string[]): Promise<{ [key: string]: number }> {
-  console.log('Fetching prices from CoinGecko...');
+async function derivePricesFromPools(pools: any[]): Promise<{ [key: string]: number }> {
+  console.log('Deriving prices from pool ratios...');
 
-  // Set known token prices
+  // Start with stablecoins = $1
   const prices: { [key: string]: number } = {
     'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v': 1, // USDC
     'Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB': 1, // USDT
-    'So11111111111111111111111111111111111111112': 150, // SOL - fallback price
   };
 
-  // For any other tokens, use hardcoded prices or set to 0
-  const tokensToFetch = mints.filter(mint => !prices[mint]);
+  // Find SOL/USDC pool to derive SOL price
+  const solUsdcPool = pools.find(p =>
+    p.tokens.some((t: any) => t.mint === 'So11111111111111111111111111111111111111112') &&
+    p.tokens.some((t: any) => t.mint === 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v')
+  );
 
-  if (tokensToFetch.length > 0) {
-    console.log(`  Warning: ${tokensToFetch.length} tokens without prices, setting to $0`);
-    for (const mint of tokensToFetch) {
-      prices[mint] = 0;
-      console.log(`  ${mint.substring(0, 8)}... = $0 (no price data)`);
+  if (solUsdcPool && solUsdcPool.tokens.length === 2) {
+    const solToken = solUsdcPool.tokens.find((t: any) => t.mint === 'So11111111111111111111111111111111111111112');
+    const usdcToken = solUsdcPool.tokens.find((t: any) => t.mint === 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v');
+
+    if (solToken && usdcToken && solToken.amount > 0) {
+      // Price of SOL = USDC amount / SOL amount
+      prices['So11111111111111111111111111111111111111112'] = usdcToken.amount / solToken.amount;
+      console.log(`  SOL price derived from pool: $${prices['So11111111111111111111111111111111111111112'].toFixed(2)}`);
+    }
+  }
+
+  // For any other tokens in pools, try to derive from their pairs
+  for (const pool of pools) {
+    if (pool.tokens.length === 2) {
+      const [token0, token1] = pool.tokens;
+
+      // If we know one token's price, derive the other
+      if (prices[token0.mint] && !prices[token1.mint] && token1.amount > 0) {
+        prices[token1.mint] = (token0.amount * prices[token0.mint]) / token1.amount;
+        console.log(`  ${token1.symbol} price derived: $${prices[token1.mint].toFixed(2)}`);
+      } else if (prices[token1.mint] && !prices[token0.mint] && token0.amount > 0) {
+        prices[token0.mint] = (token1.amount * prices[token1.mint]) / token0.amount;
+        console.log(`  ${token0.symbol} price derived: $${prices[token0.mint].toFixed(2)}`);
+      }
     }
   }
 
@@ -44,17 +65,6 @@ async function refreshData() {
   const existingData = JSON.parse(fs.readFileSync('final-dashboard-data.json', 'utf-8'));
   const lpData = JSON.parse(fs.readFileSync('lp-summary.json', 'utf-8'));
 
-  // Get all unique token mints to fetch prices
-  const allMints = new Set<string>();
-  existingData.pools.forEach((pool: any) => {
-    pool.tokens.forEach((token: any) => {
-      allMints.add(token.mint);
-    });
-  });
-
-  // Fetch current prices
-  const PRICES = await fetchPrices(Array.from(allMints));
-
   const now = Date.now() / 1000;
   const day = 24 * 60 * 60;
 
@@ -68,20 +78,19 @@ async function refreshData() {
     console.log('No previous snapshot found');
   }
 
-  const updatedPools = [];
+  // STEP 1: Fetch all current token balances first (without prices)
+  const poolsWithBalances = [];
 
   for (const pool of existingData.pools) {
-    console.log(`Refreshing ${pool.poolName}...`);
+    console.log(`Fetching balances for ${pool.poolName}...`);
 
     if (pool.tokens.length === 0) {
       console.log('  Empty pool, skipping\n');
-      updatedPools.push(pool);
+      poolsWithBalances.push(pool);
       continue;
     }
 
-    // 1. Update token balances (1 RPC call per token account)
     const updatedTokens = [];
-    let poolTVL = 0;
 
     for (const token of pool.tokens) {
       try {
@@ -91,23 +100,51 @@ async function refreshData() {
         if (accountInfo) {
           const accountData = AccountLayout.decode(accountInfo.data);
           const amount = Number(accountData.amount) / Math.pow(10, token.decimals);
-          const price = PRICES[token.mint] || 0;
-          const value = amount * price;
-
-          poolTVL += value;
 
           updatedTokens.push({
             ...token,
             amount,
           });
 
-          console.log(`  ${token.symbol}: ${amount.toFixed(3)} ($${value.toFixed(2)})`);
+          console.log(`  ${token.symbol}: ${amount.toFixed(3)}`);
         }
       } catch (error) {
         console.log(`  Error fetching ${token.symbol}: ${(error as Error).message}`);
         updatedTokens.push(token);
       }
     }
+
+    poolsWithBalances.push({
+      ...pool,
+      tokens: updatedTokens,
+    });
+
+    console.log('');
+  }
+
+  // STEP 2: Derive prices from pool ratios
+  const PRICES = await derivePricesFromPools(poolsWithBalances);
+
+  // STEP 3: Calculate TVL and other metrics using derived prices
+  const updatedPools = [];
+
+  for (const pool of poolsWithBalances) {
+    console.log(`Calculating metrics for ${pool.poolName}...`);
+
+    if (pool.tokens.length === 0) {
+      updatedPools.push(pool);
+      continue;
+    }
+
+    // Calculate TVL using derived prices
+    let poolTVL = 0;
+    const tokensWithValues = pool.tokens.map((token: any) => {
+      const price = PRICES[token.mint] || 0;
+      const value = token.amount * price;
+      poolTVL += value;
+      console.log(`  ${token.symbol}: ${token.amount.toFixed(3)} × $${price.toFixed(2)} = $${value.toFixed(2)}`);
+      return token;
+    });
 
     // 2. Update LP count (2 RPC calls: supply + largest accounts)
     const lpInfo = lpData.pools.find((p: any) => p.poolAddress === pool.poolAddress);
@@ -207,7 +244,7 @@ async function refreshData() {
     updatedPools.push({
       ...pool,
       tvl: poolTVL,
-      tokens: updatedTokens,
+      tokens: tokensWithValues,
       lpCount,
       lpSupply,
       averageDeposit: lpCount > 0 ? poolTVL / lpCount : 0,

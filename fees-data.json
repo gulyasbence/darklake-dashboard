@@ -1,10 +1,10 @@
 {
-  "fetchedAt": "2025-10-23T00:56:45.306Z",
+  "fetchedAt": "2025-10-23T00:49:28.632Z",
   "note": "Fees are estimated based on 0.5% Darklake fee rate",
   "protocol": {
-    "fees24h": 9.988044804,
-    "fees7d": 79.565195751,
-    "feesAllTime": 802.644870025,
+    "fees24h": 18.392533574850003,
+    "fees7d": 145.400357789325,
+    "feesAllTime": 920.3460213559,
     "swapCount24h": 6,
     "swapCount7d": 49,
     "swapCountAllTime": 1161
@@ -13,20 +13,20 @@
     {
       "poolAddress": "2FwaRpni7rhHMQpfihTjpZ5SadwpnTNZzEBSzMPgVSTd",
       "poolName": "SOL/USDC",
-      "fees24h": 9.988044804,
-      "fees7d": 78.239684298,
-      "feesAllTime": 139.832627256,
+      "fees24h": 18.392533574850003,
+      "fees7d": 144.074846336325,
+      "feesAllTime": 257.4954700479,
       "swapCount24h": 6,
       "swapCount7d": 47,
       "swapCountAllTime": 84,
-      "apr": 109.5
+      "apr": 109.50000000000001
     },
     {
       "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
       "poolName": "SOL/USDT",
       "fees24h": 0,
       "fees7d": 0,
-      "feesAllTime": 0.04151126000000001,
+      "feesAllTime": 0.072472799,
       "swapCount24h": 0,
       "swapCount7d": 0,
       "swapCountAllTime": 28,
@@ -48,7 +48,7 @@
       "poolName": "SOL/GOR",
       "fees24h": 0,
       "fees7d": 0,
-      "feesAllTime": 0,
+      "feesAllTime": 0.007347,
       "swapCount24h": 0,
       "swapCount7d": 0,
       "swapCountAllTime": 1,
