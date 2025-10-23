@@ -251,7 +251,10 @@
                 const poolsDiv = document.getElementById('pools');
                 let poolsHTML = '';
 
-                dashboardData.pools.forEach((pool, index) => {
+                // Sort pools by TVL (highest first)
+                const sortedPools = [...dashboardData.pools].sort((a, b) => b.tvl - a.tvl);
+
+                sortedPools.forEach((pool, index) => {
                     const poolLP = lpData.pools.find(p => p.poolAddress === pool.poolAddress);
 
                     poolsHTML += `
