@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "fetchedAt": "2025-10-23T00:28:34.972Z",
+    "fetchedAt": "2025-10-23T00:37:29.957Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1",
     "dataVersion": "1.0.0"
   },
@@ -11,7 +11,7 @@
     "totalLPs": 24,
     "averageDeposit": 194.49311737500003,
     "tvlChange24h": 0,
-    "volumeChange24h": null
+    "volumeChange24h": -14.285714285714285
   },
   "tokens": {
     "So11111111111111111111111111111111111111112": {
@@ -86,19 +86,19 @@
       "lpCount": 8,
       "lpSupply": "7479034762",
       "averageDeposit": 416.1685335,
-      "fees24h": 11.652718938000001,
+      "fees24h": 9.988044804,
       "fees7d": 78.239684298,
       "feesAllTime": 139.832627256,
-      "swapCount24h": 7,
+      "swapCount24h": 6,
       "swapCount7d": 47,
       "swapCountAllTime": 84,
-      "apr": 127.75000000000001,
+      "apr": 109.5,
       "poolPrices": {
         "SOL/USDC": 178.262683364675,
         "USDC/SOL": 0.0056096990190273475
       },
       "tvlChange24h": 0,
-      "volumeChange24h": null
+      "volumeChange24h": -14.285714285714285
     },
     {
       "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
@@ -382,7 +382,7 @@
     }
   ],
   "protocol": {
-    "swapCount24h": 7,
-    "fees24h": 11.652718938000001
+    "swapCount24h": 6,
+    "fees24h": 9.988044804
   }
 }

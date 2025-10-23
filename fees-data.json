@@ -1,11 +1,11 @@
 {
-  "fetchedAt": "2025-10-23T00:28:34.973Z",
+  "fetchedAt": "2025-10-23T00:37:29.958Z",
   "note": "Fees are estimated based on 0.5% Darklake fee rate",
   "protocol": {
-    "fees24h": 11.652718938000001,
+    "fees24h": 9.988044804,
     "fees7d": 79.565195751,
     "feesAllTime": 802.644870025,
-    "swapCount24h": 7,
+    "swapCount24h": 6,
     "swapCount7d": 49,
     "swapCountAllTime": 1161
   },
@@ -13,13 +13,13 @@
     {
       "poolAddress": "2FwaRpni7rhHMQpfihTjpZ5SadwpnTNZzEBSzMPgVSTd",
       "poolName": "SOL/USDC",
-      "fees24h": 11.652718938000001,
+      "fees24h": 9.988044804,
       "fees7d": 78.239684298,
       "feesAllTime": 139.832627256,
-      "swapCount24h": 7,
+      "swapCount24h": 6,
       "swapCount7d": 47,
       "swapCountAllTime": 84,
-      "apr": 127.75000000000001
+      "apr": 109.5
     },
     {
       "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
