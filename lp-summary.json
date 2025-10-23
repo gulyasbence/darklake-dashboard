@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "fetchedAt": "2025-10-23T08:17:56.656Z",
+    "fetchedAt": "2025-10-23T16:15:39.023Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1"
   },
   "overall": {
     "totalLPs": 24,
-    "totalTVL": 9360.248048338544,
-    "averageDeposit": 390.01033534743937,
+    "totalTVL": 9564.150424980968,
+    "averageDeposit": 398.5062677075403,
     "activePools": 6,
     "totalPools": 8
   },
@@ -14,30 +14,30 @@
     {
       "poolAddress": "2FwaRpni7rhHMQpfihTjpZ5SadwpnTNZzEBSzMPgVSTd",
       "poolName": "SOL/USDC",
-      "tvl": 6658.696536,
+      "tvl": 6860.296536,
       "lpMint": "8N5Htm73Lx2CcyKp7zQfDmyNSM6gtEm6dXPfyAszLzRp",
       "lpSupply": "7479034762",
       "lpCount": 8,
-      "averageDeposit": 832.337067,
+      "averageDeposit": 857.537067,
       "tokens": [
         {
           "symbol": "SOL",
-          "amount": 18.676641713
+          "amount": 18.130530582
         },
         {
           "symbol": "USDC",
-          "amount": 3329.348268
+          "amount": 3430.148268
         }
       ]
     },
     {
       "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
       "poolName": "SOL/USDT",
-      "tvl": 5.593321915828589,
+      "tvl": 5.754456779635822,
       "lpMint": "4YBcDr36WSE9m8FPgzW9NubuAz1sso4e4CVSDDAqwCFL",
       "lpSupply": "6484492",
       "lpCount": 1,
-      "averageDeposit": 5.593321915828589,
+      "averageDeposit": 5.754456779635822,
       "tokens": [
         {
           "symbol": "SOL",
@@ -71,11 +71,11 @@
     {
       "poolAddress": "8uoNm92uoZcqC5138ugGnZNNU9aF1obuqRysydZvJHQF",
       "poolName": "SOL/GOR",
-      "tvl": 34.92522492480713,
+      "tvl": 37.06646342351152,
       "lpMint": "BN58EoGG3CQDpViwarxypSNzkWJzvdqywtQqe8YJ5Tru",
       "lpSupply": "565471245",
       "lpCount": 1,
-      "averageDeposit": 34.92522492480713,
+      "averageDeposit": 37.06646342351152,
       "tokens": [
         {
           "symbol": "SOL",
@@ -100,11 +100,11 @@
     {
       "poolAddress": "FJr3uKM3cSBJCWrGFvF5Yrx1HxDEHAoNAfqm2gaqP8of",
       "poolName": "GOR/USDC",
-      "tvl": 0.010053497906536325,
+      "tvl": 0.010056777821764425,
       "lpMint": "AEegeX6NSHr9oiwEYG96Ni1qjQNxagdUZQPdREMfD66q",
       "lpSupply": "9900",
       "lpCount": 1,
-      "averageDeposit": 0.010053497906536325,
+      "averageDeposit": 0.010056777821764425,
       "tokens": [
         {
           "symbol": "GOR",
