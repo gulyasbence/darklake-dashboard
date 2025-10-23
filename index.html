@@ -95,6 +95,17 @@
             font-size: 12px;
         }
 
+        a {
+            color: #888;
+            text-decoration: none;
+            border-bottom: 1px dotted #666;
+        }
+
+        a:hover {
+            color: #fff;
+            border-bottom-color: #fff;
+        }
+
         hr {
             border: none;
             border-top: 1px solid #333;
@@ -128,6 +139,7 @@
         <span id="refresh-status" style="color: #666;">auto-refreshes every 8 hours</span>
     </div>
     <div id="last-updated"></div>
+    <div id="program-address" style="margin-top: 5px; color: #666; font-size: 12px;"></div>
 
     <h2>protocol overview</h2>
     <div id="protocol-stats"></div>
@@ -222,6 +234,10 @@
                 const utcString = fetchTime.toISOString().replace('T', ' ').substring(0, 19);
                 lastUpdated.textContent = `last updated: ${utcString} UTC`;
 
+                // Display program address
+                const programAddress = document.getElementById('program-address');
+                programAddress.innerHTML = `darklake program: <a href="https://orb.helius.dev/address/${dashboardData.metadata.programId}" target="_blank" rel="noopener">${dashboardData.metadata.programId}</a>`;
+
                 // Display protocol stats
                 const protocolStats = document.getElementById('protocol-stats');
                 const tvlChange = dashboardData.overview.tvlChange24h;
@@ -262,8 +278,8 @@
                     poolsHTML += `
                         <h3>${pool.poolName.toLowerCase()}</h3>
                         <ul>
-                            <li>pool address: <code>${pool.poolAddress}</code></li>
-                            ${poolLP && poolLP.lpMint ? `<li>lp token mint: <code>${poolLP.lpMint}</code></li>` : ''}
+                            <li>pool address: <a href="https://orb.helius.dev/address/${pool.poolAddress}" target="_blank" rel="noopener"><code>${pool.poolAddress}</code></a></li>
+                            ${poolLP && poolLP.lpMint ? `<li>lp token mint: <a href="https://orb.helius.dev/address/${poolLP.lpMint}" target="_blank" rel="noopener"><code>${poolLP.lpMint}</code></a></li>` : ''}
                             <li>tvl: $${pool.tvl.toLocaleString()}${tvlChangeStr}</li>
                             <li>apr: ${pool.apr > 0 ? `${pool.apr.toFixed(2)}%` : '0.00%'} <em>(24h fees annualized)</em></li>
                             <li>lps: ${poolLP ? poolLP.lpCount : 0} (avg: $${poolLP ? poolLP.averageDeposit.toFixed(2) : '0.00'})</li>
@@ -288,8 +304,8 @@
                             <li>
                                 ${token.amount.toFixed(3)} ${token.symbol.toLowerCase()}
                                 <ul>
-                                    <li>account: <code>${token.tokenAccount}</code></li>
-                                    <li>mint: <code>${token.mint}</code></li>
+                                    <li>account: <a href="https://orb.helius.dev/address/${token.tokenAccount}" target="_blank" rel="noopener"><code>${token.tokenAccount}</code></a></li>
+                                    <li>mint: <a href="https://orb.helius.dev/address/${token.mint}" target="_blank" rel="noopener"><code>${token.mint}</code></a></li>
                                 </ul>
                             </li>
                         `;
