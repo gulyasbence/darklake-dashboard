@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "fetchedAt": "2025-10-23T00:37:29.957Z",
+    "fetchedAt": "2025-10-23T00:56:45.305Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1",
     "dataVersion": "1.0.0"
   },
@@ -11,7 +11,7 @@
     "totalLPs": 24,
     "averageDeposit": 194.49311737500003,
     "tvlChange24h": 0,
-    "volumeChange24h": -14.285714285714285
+    "volumeChange24h": 0
   },
   "tokens": {
     "So11111111111111111111111111111111111111112": {
@@ -98,7 +98,7 @@
         "USDC/SOL": 0.0056096990190273475
       },
       "tvlChange24h": 0,
-      "volumeChange24h": -14.285714285714285
+      "volumeChange24h": 0
     },
     {
       "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
