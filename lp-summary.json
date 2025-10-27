@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "fetchedAt": "2025-10-27T01:01:30.027Z",
+    "fetchedAt": "2025-10-27T08:18:04.004Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1"
   },
   "overall": {
     "totalLPs": 25,
-    "totalTVL": 9813.350923876584,
-    "averageDeposit": 392.53403695506336,
+    "totalTVL": 9813.355454088556,
+    "averageDeposit": 392.5342181635422,
     "activePools": 6,
     "totalPools": 8
   },
@@ -52,38 +52,38 @@
     {
       "poolAddress": "4QFDY2LCRF5Kqyfp78V86TjLfYK4kcmn4A3XbEH1TfRn",
       "poolName": "Fartcoin/USDC",
-      "tvl": 2452.261918,
+      "tvl": 2452.254326,
       "lpMint": "CymR8PwAEGo3jVVptKCQrxtc5NrNadeZY2XmJKP2e2so",
       "lpSupply": "1970207248",
       "lpCount": 11,
-      "averageDeposit": 222.93290163636365,
+      "averageDeposit": 222.93221145454547,
       "tokens": [
         {
           "symbol": "Fartcoin",
-          "amount": 3212.853541
+          "amount": 3212.863516
         },
         {
           "symbol": "USDC",
-          "amount": 1226.130959
+          "amount": 1226.127163
         }
       ]
     },
     {
       "poolAddress": "8uoNm92uoZcqC5138ugGnZNNU9aF1obuqRysydZvJHQF",
       "poolName": "SOL/GOR",
-      "tvl": 41.12357616712234,
+      "tvl": 41.13569834325951,
       "lpMint": "BN58EoGG3CQDpViwarxypSNzkWJzvdqywtQqe8YJ5Tru",
       "lpSupply": "585671245",
       "lpCount": 1,
-      "averageDeposit": 41.12357616712234,
+      "averageDeposit": 41.13569834325951,
       "tokens": [
         {
           "symbol": "SOL",
-          "amount": 0.101518325
+          "amount": 0.10154825
         },
         {
           "symbol": "GOR",
-          "amount": 3378.813153
+          "amount": 3377.819954
         }
       ]
     },
@@ -100,11 +100,11 @@
     {
       "poolAddress": "FJr3uKM3cSBJCWrGFvF5Yrx1HxDEHAoNAfqm2gaqP8of",
       "poolName": "GOR/USDC",
-      "tvl": 0.010060855061089438,
+      "tvl": 0.010060890898424806,
       "lpMint": "AEegeX6NSHr9oiwEYG96Ni1qjQNxagdUZQPdREMfD66q",
       "lpSupply": "9900",
       "lpCount": 1,
-      "averageDeposit": 0.010060855061089438,
+      "averageDeposit": 0.010060890898424806,
       "tokens": [
         {
           "symbol": "GOR",
