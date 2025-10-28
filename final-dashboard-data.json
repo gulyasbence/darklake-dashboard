@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "fetchedAt": "2025-10-27T16:16:06.012Z",
+    "fetchedAt": "2025-10-28T00:55:14.735Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1",
     "dataVersion": "1.0.0"
   },
   "overview": {
-    "totalTVL": 9761.899754735263,
+    "totalTVL": 9722.630756163622,
     "poolCount": 8,
     "activePoolCount": 6,
     "totalLPs": 25,
-    "averageDeposit": 390.47599018941054
+    "averageDeposit": 388.9052302465449
   },
   "tokens": {
     "So11111111111111111111111111111111111111112": {
@@ -53,7 +53,7 @@
     {
       "poolAddress": "2FwaRpni7rhHMQpfihTjpZ5SadwpnTNZzEBSzMPgVSTd",
       "poolName": "SOL/USDC",
-      "tvl": 7281.280296,
+      "tvl": 7242.9337,
       "tokens": [
         {
           "tokenAccount": "4EmzN3TcakMLQQttkD7dduNSXrayMuZ19FBS54nvpniP",
@@ -61,7 +61,7 @@
           "symbol": "SOL",
           "name": "Wrapped SOL",
           "decimals": 9,
-          "amount": 18.085957378,
+          "amount": 18.181953312,
           "rawAmount": "7566325",
           "price": 150,
           "value": 1.13494875,
@@ -73,7 +73,7 @@
           "symbol": "USDC",
           "name": "USD Coin",
           "decimals": 6,
-          "amount": 3640.640148,
+          "amount": 3621.46685,
           "rawAmount": "1622880",
           "price": 1,
           "value": 1.62288,
@@ -83,7 +83,7 @@
       "dataLength": 289,
       "lpCount": 9,
       "lpSupply": "7695221377",
-      "averageDeposit": 809.031144,
+      "averageDeposit": 804.7704111111111,
       "fees24h": 17.15074134,
       "fees7d": 171.50741340000002,
       "feesAllTime": 301.85304758399997,
@@ -92,8 +92,8 @@
       "swapCountAllTime": 88,
       "apr": 91.25,
       "poolPrices": {
-        "SOL/USDC": 201.29651264292613,
-        "USDC/SOL": 0.0049677959487250045
+        "SOL/USDC": 199.17919641834354,
+        "USDC/SOL": 0.005020604651399751
       },
       "tvlChange24h": 3.027619578547489,
       "volumeChange24h": 400
@@ -101,7 +101,7 @@
     {
       "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
       "poolName": "SOL/USDT",
-      "tvl": 5.9329291835507325,
+      "tvl": 5.901691221005798,
       "tokens": [
         {
           "tokenAccount": "3HbbvQpg8gUxF28YhmEfWja6q2hoxEYRiYw6W28QyQ58",
@@ -131,7 +131,7 @@
       "dataLength": 289,
       "lpCount": 1,
       "lpSupply": "6484492",
-      "averageDeposit": 5.9329291835507325,
+      "averageDeposit": 5.901691221005798,
       "fees24h": 0,
       "fees7d": 0,
       "feesAllTime": 0.0805623949149015,
@@ -149,7 +149,7 @@
     {
       "poolAddress": "4QFDY2LCRF5Kqyfp78V86TjLfYK4kcmn4A3XbEH1TfRn",
       "poolName": "Fartcoin/USDC",
-      "tvl": 2452.102494,
+      "tvl": 2451.343588,
       "tokens": [
         {
           "tokenAccount": "4LaFRZtCwuWHNgjE7EqWB4CMdBjfrCkgT38Msg6PdLGw",
@@ -157,7 +157,7 @@
           "symbol": "Fartcoin",
           "name": "Fartcoin",
           "decimals": 6,
-          "amount": 3213.063016,
+          "amount": 3214.060516,
           "rawAmount": "3320027825",
           "price": 0,
           "value": 0,
@@ -169,7 +169,7 @@
           "symbol": "USDC",
           "name": "USD Coin",
           "decimals": 6,
-          "amount": 1226.051247,
+          "amount": 1225.671794,
           "rawAmount": "1386113451",
           "price": 1,
           "value": 1386.113451,
@@ -179,7 +179,7 @@
       "dataLength": 289,
       "lpCount": 11,
       "lpSupply": "1970207248",
-      "averageDeposit": 222.91840854545455,
+      "averageDeposit": 222.8494170909091,
       "fees24h": 0,
       "fees7d": 2.651022906,
       "feesAllTime": 1325.511453,
@@ -188,8 +188,8 @@
       "swapCountAllTime": 1000,
       "apr": 0,
       "poolPrices": {
-        "Fartcoin/USDC": 0.3815833181281123,
-        "USDC/Fartcoin": 2.6206596370763284
+        "Fartcoin/USDC": 0.3813468314919557,
+        "USDC/Fartcoin": 2.6222848006568387
       },
       "tvlChange24h": 0,
       "volumeChange24h": null
@@ -197,7 +197,7 @@
     {
       "poolAddress": "8uoNm92uoZcqC5138ugGnZNNU9aF1obuqRysydZvJHQF",
       "poolName": "SOL/GOR",
-      "tvl": 12.573968948147268,
+      "tvl": 12.441710976502543,
       "tokens": [
         {
           "tokenAccount": "GraR2vcwgME7XdiV8eGejw3yKkAg9LuPmz1GjnuxfVBJ",
@@ -217,7 +217,7 @@
           "symbol": "GOR",
           "name": "Gorbagana",
           "decimals": 6,
-          "amount": 1037.395163,
+          "amount": 1037.395113,
           "rawAmount": "3264167440",
           "price": 0,
           "value": 0,
@@ -227,7 +227,7 @@
       "dataLength": 289,
       "lpCount": 1,
       "lpSupply": "179999900",
-      "averageDeposit": 12.573968948147268,
+      "averageDeposit": 12.441710976502543,
       "fees24h": 0,
       "fees7d": 0,
       "feesAllTime": 0.01853323171175576,
@@ -236,8 +236,8 @@
       "swapCountAllTime": 1,
       "apr": 0,
       "poolPrices": {
-        "SOL/GOR": 33215.292546958204,
-        "GOR/SOL": 0.000030106614252644245
+        "SOL/GOR": 33215.290946059446,
+        "GOR/SOL": 0.000030106615703712108
       },
       "tvlChange24h": 6.130922573338914,
       "volumeChange24h": null
@@ -252,7 +252,7 @@
     {
       "poolAddress": "FJr3uKM3cSBJCWrGFvF5Yrx1HxDEHAoNAfqm2gaqP8of",
       "poolName": "GOR/USDC",
-      "tvl": 0.01006060356456543,
+      "tvl": 0.010059966115227413,
       "tokens": [
         {
           "tokenAccount": "Hr19VBZ2wDwji6PK95CzJCSL8QFwxwRaYrSdZkBLeNi5",
@@ -282,7 +282,7 @@
       "dataLength": 289,
       "lpCount": 1,
       "lpSupply": "9900",
-      "averageDeposit": 0.01006060356456543,
+      "averageDeposit": 0.010059966115227413,
       "fees24h": 0,
       "fees7d": 0,
       "feesAllTime": 0.0000050283889108822126,
@@ -356,7 +356,7 @@
           "symbol": "DUKY",
           "name": "DukY",
           "decimals": 9,
-          "amount": 199850.856366813,
+          "amount": 199858.844357145,
           "rawAmount": "199850856366813",
           "price": 0,
           "value": 0,
