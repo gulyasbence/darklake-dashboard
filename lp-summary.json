@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "fetchedAt": "2025-10-30T08:16:44.595Z",
+    "fetchedAt": "2025-10-30T16:16:32.726Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1"
   },
   "overall": {
-    "totalLPs": 29,
-    "totalTVL": 12227.012348432307,
-    "averageDeposit": 421.621115463183,
+    "totalLPs": 28,
+    "totalTVL": 10884.317942432308,
+    "averageDeposit": 388.7256408011539,
     "activePools": 6,
     "totalPools": 8
   },
@@ -52,19 +52,19 @@
     {
       "poolAddress": "4QFDY2LCRF5Kqyfp78V86TjLfYK4kcmn4A3XbEH1TfRn",
       "poolName": "Fartcoin/USDC",
-      "tvl": 2451.343588,
+      "tvl": 1108.649182,
       "lpMint": "CymR8PwAEGo3jVVptKCQrxtc5NrNadeZY2XmJKP2e2so",
-      "lpSupply": "1970207248",
-      "lpCount": 11,
-      "averageDeposit": 222.8494170909091,
+      "lpSupply": "887464101",
+      "lpCount": 10,
+      "averageDeposit": 110.8649182,
       "tokens": [
         {
           "symbol": "Fartcoin",
-          "amount": 3214.060516
+          "amount": 1453.113804
         },
         {
           "symbol": "USDC",
-          "amount": 1225.671794
+          "amount": 554.324591
         }
       ]
     },

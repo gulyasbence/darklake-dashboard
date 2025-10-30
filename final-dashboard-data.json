@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "fetchedAt": "2025-10-30T08:16:44.594Z",
+    "fetchedAt": "2025-10-30T16:16:32.725Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1",
     "dataVersion": "1.0.0"
   },
   "overview": {
-    "totalTVL": 12227.012348432307,
+    "totalTVL": 10884.317942432308,
     "poolCount": 8,
     "activePoolCount": 6,
-    "totalLPs": 29,
-    "averageDeposit": 421.621115463183
+    "totalLPs": 28,
+    "averageDeposit": 388.7256408011539
   },
   "tokens": {
     "So11111111111111111111111111111111111111112": {
@@ -149,7 +149,7 @@
     {
       "poolAddress": "4QFDY2LCRF5Kqyfp78V86TjLfYK4kcmn4A3XbEH1TfRn",
       "poolName": "Fartcoin/USDC",
-      "tvl": 2451.343588,
+      "tvl": 1108.649182,
       "tokens": [
         {
           "tokenAccount": "4LaFRZtCwuWHNgjE7EqWB4CMdBjfrCkgT38Msg6PdLGw",
@@ -157,7 +157,7 @@
           "symbol": "Fartcoin",
           "name": "Fartcoin",
           "decimals": 6,
-          "amount": 3214.060516,
+          "amount": 1453.113804,
           "rawAmount": "3320027825",
           "price": 0,
           "value": 0,
@@ -169,7 +169,7 @@
           "symbol": "USDC",
           "name": "USD Coin",
           "decimals": 6,
-          "amount": 1225.671794,
+          "amount": 554.324591,
           "rawAmount": "1386113451",
           "price": 1,
           "value": 1386.113451,
@@ -177,9 +177,9 @@
         }
       ],
       "dataLength": 289,
-      "lpCount": 11,
-      "lpSupply": "1970207248",
-      "averageDeposit": 222.8494170909091,
+      "lpCount": 10,
+      "lpSupply": "887464101",
+      "averageDeposit": 110.8649182,
       "fees24h": 0,
       "fees7d": 2.651022906,
       "feesAllTime": 1325.511453,
@@ -188,8 +188,8 @@
       "swapCountAllTime": 1000,
       "apr": 0,
       "poolPrices": {
-        "Fartcoin/USDC": 0.3813468314919557,
-        "USDC/Fartcoin": 2.6222848006568387
+        "Fartcoin/USDC": 0.3814736254477148,
+        "USDC/Fartcoin": 2.6214132073386582
       },
       "tvlChange24h": 0,
       "volumeChange24h": null
