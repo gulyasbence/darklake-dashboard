@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "fetchedAt": "2025-11-23T01:05:54.146Z",
+    "fetchedAt": "2025-11-23T08:15:25.872Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1",
     "dataVersion": "1.0.0"
   },
@@ -8,8 +8,8 @@
     "totalTVL": 9412.001126586107,
     "poolCount": 8,
     "activePoolCount": 6,
-    "totalLPs": 31,
-    "averageDeposit": 303.6129395672938
+    "totalLPs": 30,
+    "averageDeposit": 313.73337088620355
   },
   "tokens": {
     "So11111111111111111111111111111111111111112": {
@@ -81,9 +81,9 @@
         }
       ],
       "dataLength": 289,
-      "lpCount": 15,
-      "lpSupply": "8481505025",
-      "averageDeposit": 430.9825697333334,
+      "lpCount": 14,
+      "lpSupply": "8477329652",
+      "averageDeposit": 461.767039,
       "fees24h": 17.15074134,
       "fees7d": 171.50741340000002,
       "feesAllTime": 301.85304758399997,

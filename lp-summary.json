@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "fetchedAt": "2025-11-23T01:05:54.146Z",
+    "fetchedAt": "2025-11-23T08:15:25.873Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1"
   },
   "overall": {
-    "totalLPs": 31,
+    "totalLPs": 30,
     "totalTVL": 9412.001126586107,
-    "averageDeposit": 303.6129395672938,
+    "averageDeposit": 313.73337088620355,
     "activePools": 6,
     "totalPools": 8
   },
@@ -16,9 +16,9 @@
       "poolName": "SOL/USDC",
       "tvl": 6464.7385460000005,
       "lpMint": "8N5Htm73Lx2CcyKp7zQfDmyNSM6gtEm6dXPfyAszLzRp",
-      "lpSupply": "8481505025",
-      "lpCount": 15,
-      "averageDeposit": 430.9825697333334,
+      "lpSupply": "8477329652",
+      "lpCount": 14,
+      "averageDeposit": 461.767039,
       "tokens": [
         {
           "symbol": "SOL",
