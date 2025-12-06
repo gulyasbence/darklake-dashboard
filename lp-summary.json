@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "fetchedAt": "2025-12-05T16:16:31.199Z",
+    "fetchedAt": "2025-12-06T00:57:10.227Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1"
   },
   "overall": {
-    "totalLPs": 33,
-    "totalTVL": 9880.63284959199,
-    "averageDeposit": 299.4131166543027,
+    "totalLPs": 32,
+    "totalTVL": 9874.337629852485,
+    "averageDeposit": 308.57305093289017,
     "activePools": 6,
     "totalPools": 8
   },
@@ -33,19 +33,19 @@
     {
       "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
       "poolName": "SOL/USDT",
-      "tvl": 9.892876402849552,
+      "tvl": 3.597656663344196,
       "lpMint": "4YBcDr36WSE9m8FPgzW9NubuAz1sso4e4CVSDDAqwCFL",
-      "lpSupply": "12550490",
-      "lpCount": 2,
-      "averageDeposit": 4.946438201424776,
+      "lpSupply": "4516769",
+      "lpCount": 1,
+      "averageDeposit": 3.597656663344196,
       "tokens": [
         {
           "symbol": "SOL",
-          "amount": 0.027564232
+          "amount": 0.009955988
         },
         {
           "symbol": "USDT",
-          "amount": 5.99167
+          "amount": 2.188571
         }
       ]
     },
