@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "fetchedAt": "2026-03-11T08:30:18.119Z",
+    "fetchedAt": "2026-03-11T16:41:09.459Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1",
     "dataVersion": "1.0.0"
   },
   "overview": {
-    "totalTVL": 7996.135870068472,
+    "totalTVL": 7988.217913618559,
     "poolCount": 8,
     "activePoolCount": 6,
-    "totalLPs": 28,
-    "averageDeposit": 285.576281073874
+    "totalLPs": 27,
+    "averageDeposit": 295.85992272661326
   },
   "tokens": {
     "So11111111111111111111111111111111111111112": {
@@ -197,7 +197,7 @@
     {
       "poolAddress": "8uoNm92uoZcqC5138ugGnZNNU9aF1obuqRysydZvJHQF",
       "poolName": "SOL/GOR",
-      "tvl": 7.918850363768428,
+      "tvl": 0.00011816775666934016,
       "tokens": [
         {
           "tokenAccount": "GraR2vcwgME7XdiV8eGejw3yKkAg9LuPmz1GjnuxfVBJ",
@@ -205,7 +205,7 @@
           "symbol": "SOL",
           "name": "Wrapped SOL",
           "decimals": 9,
-          "amount": 0.031362379,
+          "amount": 4.68e-7,
           "rawAmount": "97960000",
           "price": 150,
           "value": 14.694,
@@ -217,7 +217,7 @@
           "symbol": "GOR",
           "name": "Gorbagana",
           "decimals": 6,
-          "amount": 1039.726066,
+          "amount": 0.000726,
           "rawAmount": "3264167440",
           "price": 0,
           "value": 0,
@@ -225,9 +225,9 @@
         }
       ],
       "dataLength": 289,
-      "lpCount": 1,
-      "lpSupply": "180576218",
-      "averageDeposit": 7.918850363768428,
+      "lpCount": 0,
+      "lpSupply": "0",
+      "averageDeposit": 0,
       "fees24h": 0,
       "fees7d": 0,
       "feesAllTime": 0.01853323171175576,
@@ -236,8 +236,8 @@
       "swapCountAllTime": 1,
       "apr": 0,
       "poolPrices": {
-        "SOL/GOR": 33152.01522180444,
-        "GOR/SOL": 0.000030164078814197974
+        "SOL/GOR": 1551.2820512820513,
+        "GOR/SOL": 0.0006446280991735538
       },
       "tvlChange24h": 6.130922573338914,
       "volumeChange24h": null
@@ -252,7 +252,7 @@
     {
       "poolAddress": "FJr3uKM3cSBJCWrGFvF5Yrx1HxDEHAoNAfqm2gaqP8of",
       "poolName": "GOR/USDC",
-      "tvl": 0.010038081426554176,
+      "tvl": 0.010813827525270938,
       "tokens": [
         {
           "tokenAccount": "Hr19VBZ2wDwji6PK95CzJCSL8QFwxwRaYrSdZkBLeNi5",
@@ -282,7 +282,7 @@
       "dataLength": 289,
       "lpCount": 1,
       "lpSupply": "9900",
-      "averageDeposit": 0.010038081426554176,
+      "averageDeposit": 0.010813827525270938,
       "fees24h": 0,
       "fees7d": 0,
       "feesAllTime": 0.0000050283889108822126,
