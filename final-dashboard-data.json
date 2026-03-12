@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "fetchedAt": "2026-03-12T08:32:28.768Z",
+    "fetchedAt": "2026-03-12T16:51:07.510Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1",
     "dataVersion": "1.0.0"
   },
   "overview": {
-    "totalTVL": 7988.217913618559,
+    "totalTVL": 7984.829882323158,
     "poolCount": 8,
     "activePoolCount": 6,
-    "totalLPs": 27,
-    "averageDeposit": 295.85992272661326
+    "totalLPs": 26,
+    "averageDeposit": 307.1088416278138
   },
   "tokens": {
     "So11111111111111111111111111111111111111112": {
@@ -101,7 +101,7 @@
     {
       "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
       "poolName": "SOL/USDT",
-      "tvl": 3.445490623276571,
+      "tvl": 0.057459327876193206,
       "tokens": [
         {
           "tokenAccount": "3HbbvQpg8gUxF28YhmEfWja6q2hoxEYRiYw6W28QyQ58",
@@ -109,7 +109,7 @@
           "symbol": "SOL",
           "name": "Wrapped SOL",
           "decimals": 9,
-          "amount": 0.009955988,
+          "amount": 0.00005617,
           "rawAmount": "14743590",
           "price": 150,
           "value": 2.2115385,
@@ -121,7 +121,7 @@
           "symbol": "USDT",
           "name": "Tether USD",
           "decimals": 6,
-          "amount": 2.188571,
+          "amount": 0.050368,
           "rawAmount": "2965090",
           "price": 1,
           "value": 2.96509,
@@ -129,9 +129,9 @@
         }
       ],
       "dataLength": 289,
-      "lpCount": 1,
-      "lpSupply": "4516769",
-      "averageDeposit": 3.445490623276571,
+      "lpCount": 0,
+      "lpSupply": "0",
+      "averageDeposit": 0,
       "fees24h": 0,
       "fees7d": 0,
       "feesAllTime": 0.0805623949149015,
@@ -140,8 +140,8 @@
       "swapCountAllTime": 28,
       "apr": 0,
       "poolPrices": {
-        "SOL/USDT": 219.82459199428524,
-        "USDT/SOL": 0.0045490815696634926
+        "SOL/USDT": 896.7064269182838,
+        "USDT/SOL": 0.0011151921855146124
       },
       "tvlChange24h": 2.8808437317229245,
       "volumeChange24h": null
