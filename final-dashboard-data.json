@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "fetchedAt": "2026-07-03T10:26:35.800Z",
+    "fetchedAt": "2026-07-03T17:13:58.034Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1",
     "dataVersion": "1.0.0"
   },
   "overview": {
-    "totalTVL": 5983.097653631543,
+    "totalTVL": 1901.4086827445362,
     "poolCount": 8,
     "activePoolCount": 6,
-    "totalLPs": 23,
-    "averageDeposit": 260.1346805926758
+    "totalLPs": 22,
+    "averageDeposit": 86.42766739747891
   },
   "tokens": {
     "So11111111111111111111111111111111111111112": {
@@ -53,7 +53,7 @@
     {
       "poolAddress": "2FwaRpni7rhHMQpfihTjpZ5SadwpnTNZzEBSzMPgVSTd",
       "poolName": "SOL/USDC",
-      "tvl": 5070.549608,
+      "tvl": 988.860652,
       "tokens": [
         {
           "tokenAccount": "4EmzN3TcakMLQQttkD7dduNSXrayMuZ19FBS54nvpniP",
@@ -61,7 +61,7 @@
           "symbol": "SOL",
           "name": "Wrapped SOL",
           "decimals": 9,
-          "amount": 20.081772397,
+          "amount": 3.924449968,
           "rawAmount": "7566325",
           "price": 150,
           "value": 1.13494875,
@@ -73,7 +73,7 @@
           "symbol": "USDC",
           "name": "USD Coin",
           "decimals": 6,
-          "amount": 2535.274804,
+          "amount": 494.430326,
           "rawAmount": "1622880",
           "price": 1,
           "value": 1.62288,
@@ -81,9 +81,9 @@
         }
       ],
       "dataLength": 289,
-      "lpCount": 11,
-      "lpSupply": "6756110371",
-      "averageDeposit": 460.9590552727273,
+      "lpCount": 10,
+      "lpSupply": "1309558446",
+      "averageDeposit": 98.88606519999999,
       "fees24h": 17.15074134,
       "fees7d": 171.50741340000002,
       "feesAllTime": 301.85304758399997,
@@ -92,8 +92,8 @@
       "swapCountAllTime": 88,
       "apr": 91.25,
       "poolPrices": {
-        "SOL/USDC": 126.24756191235106,
-        "USDC/SOL": 0.007920945045214121
+        "SOL/USDC": 125.98716508850649,
+        "USDC/SOL": 0.007937316466304294
       },
       "tvlChange24h": 3.027619578547489,
       "volumeChange24h": 400
@@ -101,7 +101,7 @@
     {
       "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
       "poolName": "SOL/USDT",
-      "tvl": 0.05745932555261676,
+      "tvl": 0.05744469906302141,
       "tokens": [
         {
           "tokenAccount": "3HbbvQpg8gUxF28YhmEfWja6q2hoxEYRiYw6W28QyQ58",
@@ -197,7 +197,7 @@
     {
       "poolAddress": "8uoNm92uoZcqC5138ugGnZNNU9aF1obuqRysydZvJHQF",
       "poolName": "SOL/GOR",
-      "tvl": 0.0001181677179499606,
+      "tvl": 0.00011792398652284207,
       "tokens": [
         {
           "tokenAccount": "GraR2vcwgME7XdiV8eGejw3yKkAg9LuPmz1GjnuxfVBJ",
@@ -252,7 +252,7 @@
     {
       "poolAddress": "FJr3uKM3cSBJCWrGFvF5Yrx1HxDEHAoNAfqm2gaqP8of",
       "poolName": "GOR/USDC",
-      "tvl": 0.00010813827258608544,
+      "tvl": 0.00010812148667512687,
       "tokens": [
         {
           "tokenAccount": "Hr19VBZ2wDwji6PK95CzJCSL8QFwxwRaYrSdZkBLeNi5",
