@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "fetchedAt": "2026-07-03T02:02:18.343Z",
+    "fetchedAt": "2026-07-03T10:26:35.800Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1",
     "dataVersion": "1.0.0"
   },
   "overview": {
-    "totalTVL": 5983.108359320529,
+    "totalTVL": 5983.097653631543,
     "poolCount": 8,
     "activePoolCount": 6,
-    "totalLPs": 24,
-    "averageDeposit": 249.2961816383554
+    "totalLPs": 23,
+    "averageDeposit": 260.1346805926758
   },
   "tokens": {
     "So11111111111111111111111111111111111111112": {
@@ -252,7 +252,7 @@
     {
       "poolAddress": "FJr3uKM3cSBJCWrGFvF5Yrx1HxDEHAoNAfqm2gaqP8of",
       "poolName": "GOR/USDC",
-      "tvl": 0.010813827258608544,
+      "tvl": 0.00010813827258608544,
       "tokens": [
         {
           "tokenAccount": "Hr19VBZ2wDwji6PK95CzJCSL8QFwxwRaYrSdZkBLeNi5",
@@ -260,7 +260,7 @@
           "symbol": "GOR",
           "name": "Gorbagana",
           "decimals": 6,
-          "amount": 0.01,
+          "amount": 0.0001,
           "rawAmount": "10000",
           "price": 0,
           "value": 0,
@@ -272,7 +272,7 @@
           "symbol": "USDC",
           "name": "USD Coin",
           "decimals": 6,
-          "amount": 0.01,
+          "amount": 0.0001,
           "rawAmount": "10000",
           "price": 1,
           "value": 0.01,
@@ -280,9 +280,9 @@
         }
       ],
       "dataLength": 289,
-      "lpCount": 1,
-      "lpSupply": "9900",
-      "averageDeposit": 0.010813827258608544,
+      "lpCount": 0,
+      "lpSupply": "0",
+      "averageDeposit": 0,
       "fees24h": 0,
       "fees7d": 0,
       "feesAllTime": 0.0000050283889108822126,
