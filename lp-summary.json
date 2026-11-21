@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "fetchedAt": "2026-11-20T16:30:13.753Z",
+    "fetchedAt": "2026-11-21T04:51:43.217Z",
     "programId": "darkr3FB87qAZmgLwKov6Hk9Yiah5UT4rUYu8Zhthw1"
   },
   "overall": {
     "totalLPs": 22,
-    "totalTVL": 1242.1585079010736,
-    "averageDeposit": 56.46175035913971,
+    "totalTVL": 1208.7426061676524,
+    "averageDeposit": 54.94284573489329,
     "activePools": 6,
     "totalPools": 8
   },
@@ -14,26 +14,26 @@
     {
       "poolAddress": "2FwaRpni7rhHMQpfihTjpZ5SadwpnTNZzEBSzMPgVSTd",
       "poolName": "SOL/USDC",
-      "tvl": 733.351492,
+      "tvl": 714.25155,
       "lpMint": "8N5Htm73Lx2CcyKp7zQfDmyNSM6gtEm6dXPfyAszLzRp",
       "lpSupply": "1309558446",
       "lpCount": 10,
-      "averageDeposit": 73.3351492,
+      "averageDeposit": 71.42515499999999,
       "tokens": [
         {
           "symbol": "SOL",
-          "amount": 5.301858016
+          "amount": 5.444302157
         },
         {
           "symbol": "USDC",
-          "amount": 366.675746
+          "amount": 357.125775
         }
       ]
     },
     {
       "poolAddress": "2W28tZr2Qwy2PqnesqUzbxB2S4E7BTisoJTjAhtVamxB",
       "poolName": "SOL/USDT",
-      "tvl": 0.05425270920772768,
+      "tvl": 0.0540525410492065,
       "lpMint": "4YBcDr36WSE9m8FPgzW9NubuAz1sso4e4CVSDDAqwCFL",
       "lpSupply": "0",
       "lpCount": 0,
@@ -52,26 +52,26 @@
     {
       "poolAddress": "4QFDY2LCRF5Kqyfp78V86TjLfYK4kcmn4A3XbEH1TfRn",
       "poolName": "Fartcoin/USDC",
-      "tvl": 506.752794,
+      "tvl": 492.4370379999999,
       "lpMint": "CymR8PwAEGo3jVVptKCQrxtc5NrNadeZY2XmJKP2e2so",
       "lpSupply": "887464101",
       "lpCount": 10,
-      "averageDeposit": 50.6752794,
+      "averageDeposit": 49.24370379999999,
       "tokens": [
         {
           "symbol": "Fartcoin",
-          "amount": 3208.826669
+          "amount": 3303.948706
         },
         {
           "symbol": "USDC",
-          "amount": 253.376397
+          "amount": 246.218519
         }
       ]
     },
     {
       "poolAddress": "8uoNm92uoZcqC5138ugGnZNNU9aF1obuqRysydZvJHQF",
       "poolName": "SOL/GOR",
-      "tvl": 0.00006473362681917585,
+      "tvl": 0.00006139808477937129,
       "lpMint": "BN58EoGG3CQDpViwarxypSNzkWJzvdqywtQqe8YJ5Tru",
       "lpSupply": "0",
       "lpCount": 0,
@@ -100,7 +100,7 @@
     {
       "poolAddress": "FJr3uKM3cSBJCWrGFvF5Yrx1HxDEHAoNAfqm2gaqP8of",
       "poolName": "GOR/USDC",
-      "tvl": 0.00010445823876165123,
+      "tvl": 0.0001042285182354939,
       "lpMint": "AEegeX6NSHr9oiwEYG96Ni1qjQNxagdUZQPdREMfD66q",
       "lpSupply": "0",
       "lpCount": 0,
